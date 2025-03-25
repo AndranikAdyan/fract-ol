@@ -1,22 +1,22 @@
 NAME		= fractol
 
+LIBFT_DIR	= libs/libft
+
+LIBFT		= -L./$(LIBFT_DIR) -lft
+
+MLX_DIR		= libs/minilibx-linux
+
+MLX			= -L./$(MLX_DIR) -lmlx -lm -lX11 -lXext
+
+INCLUDES	= -I./includes -I./$(LIBFT_DIR) -I./$(MLX_DIR)
+
+HEADER		= ./includes/fractol.h
+
 CC			= cc
 
 FLAGS		= -Wall -Wextra -Werror
 
 SRC_DIR		= ./src
-
-INCLUDES	= -I./includes -I./libft -I./minilibx-linux
-
-HEADER		= ./includes/fractol.h
-
-LIBFT_DIR	=	libft
-
-LIBFT		=	-Llibft -lft
-
-MLX_DIR		=	minilibx-linux
-
-MLX			=	-L./minilibx-linux -lmlx -lm -lX11 -lXext
 
 SRC			= $(shell find $(SRC_DIR) -name "*.c")
 
