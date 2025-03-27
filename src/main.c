@@ -6,19 +6,30 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 17:22:53 by aadyan            #+#    #+#             */
-/*   Updated: 2025/03/25 20:56:18 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/03/28 00:16:56 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <mlx.h>
+#include "fractol.h"
 
 int	main(void)
 {
-	void	*mlx;
-	void	*mlx_win;
+	t_mlx	*mlx;
+	t_data	*img;
 
-	mlx = mlx_init();
-	mlx_win = mlx_new_window(mlx, 1080, 720, "Hello world!");
-	mlx_loop(mlx);
-	(void)mlx_win;
+	mlx = malloc(sizeof(t_mlx));
+	img = malloc(sizeof(t_data));
+	if (!mlx || !img)
+		return (1);
+	mlx->mlx = mlx_init();
+	mlx->window = mlx_new_window(mlx->mlx, WIDTH, HEIGHT, "Fract-ol");
+	img->img = mlx_new_image(mlx->mlx, WIDTH, HEIGHT);
+	img->addr = mlx_get_data_addr(img->img, &img->bits_per_pixel, \
+		&img->line_length, &img->endian);
+	draw_mandelbrot(img);
+	mlx_put_image_to_window(mlx->mlx, mlx->window, img->img, 0, 0);
+	mlx_loop(mlx->mlx);
+	free(img);
+	free(mlx);
+	return (0);
 }

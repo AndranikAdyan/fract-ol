@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.h                                          :+:      :+:    :+:   */
+/*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/23 17:18:52 by aadyan            #+#    #+#             */
-/*   Updated: 2025/03/28 00:32:10 by aadyan           ###   ########.fr       */
+/*   Created: 2025/03/27 12:14:43 by aadyan            #+#    #+#             */
+/*   Updated: 2025/03/28 00:35:34 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FARCTOL_H
-# define FARCTOL_H
+#ifndef STRUCTS_H
+# define STRUCTS_H
 
-# include "mlx.h"
-# include "libft.h"
-# include "structs.h"
+typedef struct	s_data
+{
+	void	*img;
+	char	*addr;
+	int		bits_per_pixel;
+	int		line_length;
+	int		endian;
+}				t_data;
 
-# define WIDTH 720
-# define HEIGHT 720
+typedef struct s_mlx
+{
+	void	*mlx;
+	void	*window;
+} t_mlx;
 
-void	draw_pixel(int x, int y, t_data *img, int color);
-void	draw_mandelbrot(t_data *img);
+typedef struct s_complex_numbers
+{
+	double cx;
+	double cy;
+} t_complex_numbers;
 
 #endif
