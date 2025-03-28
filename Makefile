@@ -14,7 +14,7 @@ HEADER		= ./includes/fractol.h
 
 CC			= cc
 
-FLAGS		= -Wall -Wextra -Werror -fsanitize=address
+FLAGS		= -Wall -Wextra -Werror -g3 -fsanitize=address
 
 SRC_DIR		= ./src
 
