@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 17:22:53 by aadyan            #+#    #+#             */
-/*   Updated: 2025/03/28 00:16:56 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/03/28 10:08:02 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ int	main(void)
 	if (!mlx || !img)
 		return (1);
 	mlx->mlx = mlx_init();
-	mlx->window = mlx_new_window(mlx->mlx, WIDTH, HEIGHT, "Fract-ol");
-	img->img = mlx_new_image(mlx->mlx, WIDTH, HEIGHT);
+	mlx->window = mlx_new_window(mlx->mlx, WIN_SIZE, WIN_SIZE, "Fract-ol");
+	img->img = mlx_new_image(mlx->mlx, WIN_SIZE, WIN_SIZE);
 	img->addr = mlx_get_data_addr(img->img, &img->bits_per_pixel, \
 		&img->line_length, &img->endian);
 	draw_mandelbrot(img);
