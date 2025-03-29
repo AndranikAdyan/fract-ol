@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 12:14:43 by aadyan            #+#    #+#             */
-/*   Updated: 2025/03/28 14:02:57 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/03/28 14:31:18 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,6 @@ typedef struct s_data
 	int		endian;
 }	t_data;
 
-typedef struct s_mlx
-{
-	void	*mlx;
-	void	*window;
-	t_data	*img_data;
-}	t_mlx;
 
 typedef struct s_complex_numbers
 {
@@ -40,7 +34,16 @@ typedef struct s_properties
 	double	zoom;
 	double	shift_x;
 	double	shift_y;
+	int		color;
+	int		color_queue;
 }	t_properties;
 
+typedef struct s_mlx
+{
+	void			*mlx;
+	void			*window;
+	t_data			*img_data;
+	t_properties	*props;
+}	t_mlx;
 
 #endif
