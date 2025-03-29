@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 17:18:52 by aadyan            #+#    #+#             */
-/*   Updated: 2025/03/29 16:14:41 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/03/29 19:55:37 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,19 @@
 # include "keys.h"
 
 # define WIN_SIZE 500
-# define MAX_ITER 50
+# define MAX_ITER 300
 
-t_mlx	*init_mlx();
-void	fill_img(t_mlx *mlx);
-void	free_mlx(t_mlx *mlx);
+t_mlx				*init_mlx();
+void				fill_img(t_mlx *mlx);
+void				free_mlx(t_mlx *mlx);
 
-void	draw_pixel(int x, int y, t_data *img, int color);
-void	draw_mandelbrot(t_data *img, t_properties *props);
-int		keys_handle(int keycode, t_mlx *mlx);
+int					keys_handle(int keycode, t_mlx *mlx);
+
+void				draw_pixel(int x, int y, t_data *img, int color);
+void				draw_fractal(t_data *img, t_properties *props, int (*fractal)(t_complex_numbers *, int));
+
+t_complex_numbers	*get_complex_nums(int x, int y, t_properties *props);
+
+int					mandelbrot(t_complex_numbers *c_nums, int max_iter);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 13:16:45 by aadyan            #+#    #+#             */
-/*   Updated: 2025/03/29 16:43:25 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/03/29 19:55:02 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ t_mlx	*init_mlx()
 	mlx->props->shift_y = mlx->props->shift_y / 40;
 	mlx->props->color = 0xFF0000;
 	mlx->props->color_queue = 0;
+	mlx->fractal = mandelbrot;
 	return (mlx);
 }
 
@@ -47,20 +48,6 @@ void	free_mlx(t_mlx *mlx)
 
 void	fill_img(t_mlx *mlx)
 {
-	// int	x;
-	// int	y;
-
-	// y = 0;
-	// while (y < WIN_SIZE)
-	// {
-	// 	x = 0;
-	// 	while (x < WIN_SIZE)
-	// 	{
-	// 		draw_pixel(x, y, mlx->img_data, 0x000000);
-	// 		++x;
-	// 	}
-	// 	++y;
-	// }
 	if (mlx->img_data->img)
 	{
 		mlx_destroy_image(mlx->mlx, mlx->img_data->img);
@@ -68,6 +55,6 @@ void	fill_img(t_mlx *mlx)
 		mlx->img_data->addr = mlx_get_data_addr(mlx->img_data->img, &mlx->img_data->bits_per_pixel, \
 			&mlx->img_data->line_length, &mlx->img_data->endian);
 	}
-	draw_mandelbrot(mlx->img_data, mlx->props);
+	draw_fractal(mlx->img_data, mlx->props, mlx->fractal);
 	mlx_put_image_to_window(mlx->mlx, mlx->window, mlx->img_data->img, 0, 0);
 }

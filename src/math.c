@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   math.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/23 17:22:53 by aadyan            #+#    #+#             */
-/*   Updated: 2025/03/29 19:53:15 by aadyan           ###   ########.fr       */
+/*   Created: 2025/03/29 19:42:42 by aadyan            #+#    #+#             */
+/*   Updated: 2025/03/29 19:42:57 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-int	main(void)
+t_complex_numbers	*get_complex_nums(int x, int y, t_properties *props)
 {
-	t_mlx	*mlx;
+	t_complex_numbers	*c_nums;
 
-	mlx = init_mlx();
-	if (!mlx)
-		exit (12);
-	fill_img(mlx);
-	mlx_hook(mlx->window, 2, 1L << 0, keys_handle, mlx);
-	mlx_loop(mlx->mlx);
-	return (0);
+	c_nums = (t_complex_numbers *)malloc(sizeof(t_complex_numbers));
+	if (!c_nums)
+		return (NULL);
+	c_nums->cx = ((x - WIN_SIZE / 2) / (WIN_SIZE / props->zoom)) + props->shift_x;
+	c_nums->cy = ((y - WIN_SIZE / 2) / (WIN_SIZE / props->zoom)) + props->shift_y;
+
+	return (c_nums);
 }
