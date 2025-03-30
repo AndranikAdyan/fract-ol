@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 17:18:52 by aadyan            #+#    #+#             */
-/*   Updated: 2025/03/29 19:55:37 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/03/30 10:47:48 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ void				draw_fractal(t_data *img, t_properties *props, int (*fractal)(t_complex_
 t_complex_numbers	*get_complex_nums(int x, int y, t_properties *props);
 
 int					mandelbrot(t_complex_numbers *c_nums, int max_iter);
+int					julia(t_complex_numbers *c_nums, int max_iter);
 
 #endif

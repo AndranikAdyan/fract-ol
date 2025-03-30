@@ -39,7 +39,7 @@ minilibx:
 	make -C $(MLX_DIR)
 
 build:
-	mkdir -p ${BUILD_DIR}
+	mkdir -p ${BUILD_DIR}/fractals
 
 clean:
 	rm -rf $(BUILD_DIR)
