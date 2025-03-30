@@ -28,7 +28,7 @@ void	draw_fractal(t_data *img, t_properties *props, int (*fractal)(t_complex_num
 	int					x;
 	int					y;
 	int					iter;
-	int					iter_next;
+	int					color;
 	t_complex_numbers	*c_nums;
 
 	y = 0;
@@ -40,11 +40,11 @@ void	draw_fractal(t_data *img, t_properties *props, int (*fractal)(t_complex_num
 			c_nums = get_complex_nums(x, y, props);
 			iter = fractal(c_nums, MAX_ITER);
 			free(c_nums);
-			c_nums = get_complex_nums(x + 1, y, props);
-			iter_next = fractal(c_nums, MAX_ITER);
-			free(c_nums);
-			if (abs(iter - iter_next) > 1)
-				draw_pixel(x, y, img, props->color);
+			if (iter < 100)
+			{
+				color = (props->color + props->color + iter * 10000) & 0x0000FF;
+				draw_pixel(x, y, img, color);
+			}
 			++x;
 		}
 		++y;
