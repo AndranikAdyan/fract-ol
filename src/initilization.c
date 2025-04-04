@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 13:16:45 by aadyan            #+#    #+#             */
-/*   Updated: 2025/04/04 20:37:50 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/04/04 20:48:29 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ t_mlx	*init_mlx(void)
 		return (NULL);
 	mlx->img_data = (t_data *)malloc(sizeof(t_data));
 	if (!mlx->img_data)
-		return (NULL);
+		return (free(mlx), NULL);
 	mlx->props = (t_properties *)malloc(sizeof(t_properties));
 	if (!mlx->props)
-		return (NULL);
+		return (free(mlx->img_data), free(mlx), NULL);
 	mlx->mlx = mlx_init();
 	mlx->window = mlx_new_window(mlx->mlx, WIN_SIZE, WIN_SIZE, "Fract-ol");
 	mlx->img_data->img = mlx_new_image(mlx->mlx, WIN_SIZE, WIN_SIZE);
