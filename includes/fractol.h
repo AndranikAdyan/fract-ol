@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 17:18:52 by aadyan            #+#    #+#             */
-/*   Updated: 2025/03/30 10:47:48 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/04/04 13:54:30 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include "libft.h"
 # include "structs.h"
 # include "keys.h"
+# include <stdio.h>
 
 # define WIN_SIZE 500
 # define MAX_ITER 300
@@ -26,13 +27,14 @@ void				fill_img(t_mlx *mlx);
 void				free_mlx(t_mlx *mlx);
 
 int					keys_handle(int keycode, t_mlx *mlx);
+int					mouse_hook(int keycode, int x, int y, t_mlx *mlx);
 
 void				draw_pixel(int x, int y, t_data *img, int color);
-void				draw_fractal(t_data *img, t_properties *props, int (*fractal)(t_complex_numbers *, int));
+void				draw_fractal(t_data *img, t_properties *props, int (*fractal)(t_complex_numbers, int));
 
-t_complex_numbers	*get_complex_nums(int x, int y, t_properties *props);
+t_complex_numbers	get_complex_nums(int x, int y, t_properties *props);
 
-int					mandelbrot(t_complex_numbers *c_nums, int max_iter);
-int					julia(t_complex_numbers *c_nums, int max_iter);
+int					mandelbrot(t_complex_numbers c_nums, int max_iter);
+int					julia(t_complex_numbers c_nums, int max_iter);
 
 #endif

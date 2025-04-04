@@ -23,13 +23,13 @@ void	draw_pixel(int x, int y, t_data *img, int color)
 	*(unsigned int *)pixel_addr = color;
 }
 
-void	draw_fractal(t_data *img, t_properties *props, int (*fractal)(t_complex_numbers *, int))
+void	draw_fractal(t_data *img, t_properties *props, int (*fractal)(t_complex_numbers, int))
 {
 	int					x;
 	int					y;
 	int					iter;
 	int					color;
-	t_complex_numbers	*c_nums;
+	t_complex_numbers	c_nums;
 
 	y = 0;
 	while (y < WIN_SIZE - 1)
@@ -39,10 +39,11 @@ void	draw_fractal(t_data *img, t_properties *props, int (*fractal)(t_complex_num
 		{
 			c_nums = get_complex_nums(x, y, props);
 			iter = fractal(c_nums, MAX_ITER);
-			free(c_nums);
 			if (iter < 100)
 			{
-				color = (props->color + props->color + iter * 10000) & 0x0000FF;
+				color = ((props->color + iter * 300) & 0xFF0000) |
+						((props->color + iter * 500) & 0x00FF00) |
+						((props->color + iter * 700) & 0x0000FF);
 				draw_pixel(x, y, img, color);
 			}
 			++x;

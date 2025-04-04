@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 12:14:43 by aadyan            #+#    #+#             */
-/*   Updated: 2025/03/29 19:52:24 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/04/04 13:50:06 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ typedef struct s_mlx
 	void			*window;
 	t_data			*img_data;
 	t_properties	*props;
-	int				(*fractal)(t_complex_numbers *, int);
+	int				(*fractal)(t_complex_numbers, int);
 }	t_mlx;
 
 #endif
