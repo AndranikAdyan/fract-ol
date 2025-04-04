@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 13:16:45 by aadyan            #+#    #+#             */
-/*   Updated: 2025/04/04 20:48:29 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/04/04 20:49:37 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,12 @@ t_mlx	*init_mlx(void)
 
 int	free_mlx(t_mlx *mlx)
 {
-	mlx_destroy_window(mlx->mlx, mlx->window);
 	mlx_destroy_image(mlx->mlx, mlx->img_data->img);
+	mlx_destroy_window(mlx->mlx, mlx->window);
 	mlx_destroy_display(mlx->mlx);
-	free(mlx->mlx);
 	free(mlx->img_data);
 	free(mlx->props);
+	free(mlx);
 	exit(0);
 }
 
