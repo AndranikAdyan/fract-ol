@@ -1,13 +1,13 @@
 /* ************************************************************************** */
-/*																			*/
-/*														:::	  ::::::::   */
-/*   draw.c											 :+:	  :+:	:+:   */
-/*													+:+ +:+		 +:+	 */
-/*   By: aadyan <marvin@42.fr>					  +#+  +:+	   +#+		*/
-/*												+#+#+#+#+#+   +#+		   */
-/*   Created: 2025/03/27 11:50:12 by aadyan			#+#	#+#			 */
-/*   Updated: 2025/03/27 12:13:21 by aadyan		   ###   ########.fr	   */
-/*																			*/
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   draw.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/04 15:36:14 by aadyan            #+#    #+#             */
+/*   Updated: 2025/04/04 15:43:05 by aadyan           ###   ########.fr       */
+/*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
@@ -23,7 +23,8 @@ void	draw_pixel(int x, int y, t_data *img, int color)
 	*(unsigned int *)pixel_addr = color;
 }
 
-void	draw_fractal(t_data *img, t_properties *props, int (*fractal)(t_complex_numbers, int))
+void	draw_fractal(t_data *img, t_properties *props, \
+						int (*fractal)(t_complex_numbers, int))
 {
 	int					x;
 	int					y;
@@ -41,9 +42,9 @@ void	draw_fractal(t_data *img, t_properties *props, int (*fractal)(t_complex_num
 			iter = fractal(c_nums, MAX_ITER);
 			if (iter < 100)
 			{
-				color = ((props->color + iter * 300) & 0xFF0000) |
-						((props->color + iter * 500) & 0x00FF00) |
-						((props->color + iter * 700) & 0x0000FF);
+				color = ((props->color + iter * 300) & 0xFF0000) | \
+					((props->color + iter * 500) & 0x00FF00) | \
+					((props->color + iter * 700) & 0x0000FF);
 				draw_pixel(x, y, img, color);
 			}
 			++x;

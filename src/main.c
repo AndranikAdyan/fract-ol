@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 17:22:53 by aadyan            #+#    #+#             */
-/*   Updated: 2025/04/04 13:38:41 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/04/04 15:38:57 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,5 @@ int	main(void)
 	mlx_hook(mlx->window, 2, 1L << 0, keys_handle, mlx);
 	mlx_mouse_hook(mlx->window, mouse_hook, mlx);
 	mlx_loop(mlx->mlx);
-
 	return (0);
 }

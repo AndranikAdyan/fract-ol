@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 13:06:27 by aadyan            #+#    #+#             */
-/*   Updated: 2025/04/04 15:13:23 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/04/04 15:44:19 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static void	change_color(t_mlx *mlx)
 		mlx->props->color = 0xF0FFF0;
 }
 
-static void move_fractal(t_mlx *mlx, int key)
+static void	move_fractal(t_mlx *mlx, int key)
 {
 	if (key == UP)
 		mlx->props->shift_y += mlx->props->zoom / 40;
@@ -40,7 +40,7 @@ static void move_fractal(t_mlx *mlx, int key)
 		mlx->props->shift_x += mlx->props->zoom / 40;
 }
 
-static void zoom_fractal(t_mlx *mlx, int key)
+static void	zoom_fractal(t_mlx *mlx, int key)
 {
 	if (key == ZOOM_IN1 || key == ZOOM_IN2)
 		mlx->props->zoom /= 1.1;
@@ -48,7 +48,7 @@ static void zoom_fractal(t_mlx *mlx, int key)
 		mlx->props->zoom *= 1.1;
 }
 
-static void reset_fractol(t_mlx *mlx)
+static void	reset_fractol(t_mlx *mlx)
 {
 	mlx->props->zoom = 4.0;
 	mlx->props->shift_x = 0.0;
@@ -57,8 +57,6 @@ static void reset_fractol(t_mlx *mlx)
 
 int	keys_handle(int keycode, t_mlx *mlx)
 {
-	// ft_putnbr_fd(keycode, 1);
-	// ft_putendl_fd("", 1);
 	if (keycode == ESC || keycode == Q)
 		free_mlx(mlx);
 	else if (keycode == SPACE)

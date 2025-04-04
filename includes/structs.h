@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 12:14:43 by aadyan            #+#    #+#             */
-/*   Updated: 2025/04/04 13:50:06 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/04/04 15:37:47 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ typedef struct s_data
 	int		line_length;
 	int		endian;
 }	t_data;
-
 
 typedef struct s_complex_numbers
 {
