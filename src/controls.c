@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 13:06:27 by aadyan            #+#    #+#             */
-/*   Updated: 2025/04/04 23:49:20 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/04/05 01:46:27 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,13 @@ static void	change_color(t_mlx *mlx)
 	mlx->props->color_queue++;
 	if (mlx->props->color_queue > 3)
 		mlx->props->color_queue = 0;
-	if (mlx->props->color_queue == 0)
+	if (mlx->props->color_queue == 0 || \
+		mlx->props->color_queue == 3)
 		mlx->props->color = 0x0000FF;
 	else if (mlx->props->color_queue == 1)
-		mlx->props->color = 0x3CB371;
+		mlx->props->color = 0x9370DB;
 	else if (mlx->props->color_queue == 2)
-		mlx->props->color = 0xF0FFF0;
+		mlx->props->color = 0xDAA520;
 }
 
 static void	move_fractal(t_mlx *mlx, int key)

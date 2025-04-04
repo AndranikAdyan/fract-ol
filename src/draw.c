@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 15:36:14 by aadyan            #+#    #+#             */
-/*   Updated: 2025/04/04 15:43:05 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/04/05 01:13:28 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ void	draw_fractal(t_data *img, t_properties *props, \
 			iter = fractal(c_nums, MAX_ITER);
 			if (iter < 100)
 			{
-				color = ((props->color + iter * 300) & 0xFF0000) | \
-					((props->color + iter * 500) & 0x00FF00) | \
-					((props->color + iter * 700) & 0x0000FF);
+				color = ((props->color + iter * 100) & 0xFF0000) | \
+					((props->color + iter * 300) & 0x00FF00) | \
+					((props->color + iter * 10) & 0x0000FF);
 				draw_pixel(x, y, img, color);
 			}
 			++x;
