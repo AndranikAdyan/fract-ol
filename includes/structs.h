@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 12:14:43 by aadyan            #+#    #+#             */
-/*   Updated: 2025/04/04 15:37:47 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/04/04 23:31:20 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct s_properties
 	double	shift_y;
 	int		color;
 	int		color_queue;
+	int		color_decreasing;
 }	t_properties;
 
 typedef struct s_mlx

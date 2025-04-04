@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 13:16:45 by aadyan            #+#    #+#             */
-/*   Updated: 2025/04/04 20:49:37 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/04/04 23:52:00 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,14 @@ t_mlx	*init_mlx(void)
 	mlx->window = mlx_new_window(mlx->mlx, WIN_SIZE, WIN_SIZE, "Fract-ol");
 	mlx->img_data->img = mlx_new_image(mlx->mlx, WIN_SIZE, WIN_SIZE);
 	mlx->img_data->addr = mlx_get_data_addr(mlx->img_data->img, \
-							&mlx->img_data->bits_per_pixel, \
-							&mlx->img_data->line_length, \
-							&mlx->img_data->endian);
+						&mlx->img_data->bits_per_pixel, \
+						&mlx->img_data->line_length, &mlx->img_data->endian);
 	mlx->props->zoom = 4.0;
 	mlx->props->shift_x = 0.0;
 	mlx->props->shift_y = 0.0;
 	mlx->props->color = 0x0000FF;
 	mlx->props->color_queue = 0;
+	mlx->props->color_decreasing = 0;
 	mlx->fractal = mandelbrot;
 	return (mlx);
 }

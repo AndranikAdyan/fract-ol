@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 13:06:27 by aadyan            #+#    #+#             */
-/*   Updated: 2025/04/04 15:44:19 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/04/04 23:49:20 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,14 @@
 
 static void	change_color(t_mlx *mlx)
 {
-	int	val;
-
 	mlx->props->color_queue++;
-	if (mlx->props->color_queue > 2)
+	if (mlx->props->color_queue > 3)
 		mlx->props->color_queue = 0;
-	val = mlx->props->color_queue % 3;
-	if (val == 0)
+	if (mlx->props->color_queue == 0)
 		mlx->props->color = 0x0000FF;
-	else if (val == 1)
+	else if (mlx->props->color_queue == 1)
 		mlx->props->color = 0x3CB371;
-	else if (val == 2)
+	else if (mlx->props->color_queue == 2)
 		mlx->props->color = 0xF0FFF0;
 }
 
@@ -57,7 +54,7 @@ static void	reset_fractol(t_mlx *mlx)
 
 int	keys_handle(int keycode, t_mlx *mlx)
 {
-	if (keycode == ESC || keycode == Q)
+	if (keycode == ESC || keycode == KEY_Q)
 		free_mlx(mlx);
 	else if (keycode == SPACE)
 		change_color(mlx);
@@ -67,7 +64,7 @@ int	keys_handle(int keycode, t_mlx *mlx)
 	else if (keycode == ZOOM_IN1 || keycode == ZOOM_IN2 || \
 			keycode == ZOOM_OUT1 || keycode == ZOOM_OUT2)
 		zoom_fractal(mlx, keycode);
-	else if (keycode == R)
+	else if (keycode == KEY_R)
 		reset_fractol(mlx);
 	fill_img(mlx);
 	return (0);
