@@ -45,7 +45,6 @@ build:
 
 clean:
 	rm -rf $(BUILD_DIR)
-	make -C $(MLX_DIR) clean
 	make -C $(LIBFT_DIR) clean
 
 fclean: clean
