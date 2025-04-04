@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 17:18:52 by aadyan            #+#    #+#             */
-/*   Updated: 2025/04/04 15:38:33 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/04/04 20:37:37 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 
 t_mlx				*init_mlx(void);
 void				fill_img(t_mlx *mlx);
-void				free_mlx(t_mlx *mlx);
+int					free_mlx(t_mlx *mlx);
 
 int					keys_handle(int keycode, t_mlx *mlx);
 int					mouse_hook(int keycode, int x, int y, t_mlx *mlx);
