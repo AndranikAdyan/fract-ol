@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 16:46:57 by aadyan            #+#    #+#             */
-/*   Updated: 2025/04/04 15:43:45 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/04/04 19:02:24 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ static void	mouse_zoom(t_mlx *mlx, int keycode, int x, int y)
 	else
 		zoom_factor = 1 / 1.1;
 	mlx->props->zoom *= zoom_factor;
-	mlx->props->shift_x -= (x - center_x) / WIN_SIZE * 2 * \
+	mlx->props->shift_x -= (x - center_x) / WIN_SIZE * \
 							(mlx->props->zoom - prev_zoom);
-	mlx->props->shift_y -= (y - center_y) / WIN_SIZE * 2 * \
+	mlx->props->shift_y -= (y - center_y) / WIN_SIZE * \
 							(mlx->props->zoom - prev_zoom);
 }
 
