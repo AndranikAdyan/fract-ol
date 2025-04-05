@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 19:55:12 by aadyan            #+#    #+#             */
-/*   Updated: 2024/10/29 14:19:02 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/04/05 23:27:11 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 char	*ft_strnstr(const char *str, const char *to_find, size_t n);
 int		ft_strncmp(char *s1, char *s2, unsigned int n);
+int		ft_strcmp(char *s1, char *s2);
 char	*ft_strdup(char *src);
 int		ft_toupper(int c);
 int		ft_tolower(int c);

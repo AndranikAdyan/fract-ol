@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/23 17:22:53 by aadyan            #+#    #+#             */
-/*   Updated: 2025/04/05 23:45:31 by aadyan           ###   ########.fr       */
+/*   Created: 2025/04/05 23:26:20 by aadyan            #+#    #+#             */
+/*   Updated: 2025/04/05 23:27:16 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "libft.h"
 
-int	main(int argc, char *argv[])
+int	ft_strcmp(char *s1, char *s2)
 {
-	t_mlx	*mlx;
+	unsigned int	i;
 
-	mlx = init_mlx();
-	if (!mlx)
-		exit (12);
-	if (!validation(argc, argv, mlx))
-		free_mlx(mlx);
-	hooks(mlx);
-	mlx_loop(mlx->mlx);
+	i = 0;
+	if (!s1 || !s2)
+		return (0);
+	while ((s1[i] || s2[i]))
+	{
+		if (s1[i] != s2[i])
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		++i;
+	}
 	return (0);
 }
