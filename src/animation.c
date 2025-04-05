@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 23:35:01 by aadyan            #+#    #+#             */
-/*   Updated: 2025/04/06 02:11:36 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/04/06 02:21:10 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	animated_color(t_mlx *mlx)
 {
-	if (mlx->props->color_queue != 0)
+	if (mlx->props->color_queue != 0 && mlx->props->animation)
 	{
 		if (mlx->props->color >= 0xFFFFFF)
 			mlx->props->color_decreasing = 1;

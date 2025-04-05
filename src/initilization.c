@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 13:16:45 by aadyan            #+#    #+#             */
-/*   Updated: 2025/04/06 02:09:00 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/04/06 02:16:11 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ static void	init_props(t_mlx *mlx)
 	mlx->props->c_nums = (t_complex_numbers){0, 0};
 	mlx->props->coords = (t_coords){-0.7, -0.27015};
 	mlx->props->interesting = 10;
+	mlx->props->animation = 1;
 }
 
 t_mlx	*init_mlx(void)

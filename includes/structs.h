@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 12:14:43 by aadyan            #+#    #+#             */
-/*   Updated: 2025/04/06 01:54:37 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/04/06 02:15:55 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ typedef struct s_properties
 	int					color_queue;
 	int					color_decreasing;
 	int					interesting;
+	int					animation;
 	t_complex_numbers	c_nums;
 	t_coords			coords;
 }	t_properties;

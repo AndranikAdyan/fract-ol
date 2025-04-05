@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 22:53:41 by aadyan            #+#    #+#             */
-/*   Updated: 2025/04/06 00:56:16 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/04/06 02:24:26 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ static void	print_help_menu(void)
 	ft_putstr_fd("Scroll     → zoom in / out\n", 1);
 	ft_putstr_fd("W A S D    → change Julia parameters\n", 1);
 	ft_putstr_fd("Space      → change colors\n", 1);
+	ft_putstr_fd("L          → lock animation\n", 1);
 	ft_putstr_fd("N / M      → something interesting :)\n", 1);
 	ft_putstr_fd(GREEN"Have fun exploring fractals!\n"RESET, 1);
 }

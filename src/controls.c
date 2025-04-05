@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 13:06:27 by aadyan            #+#    #+#             */
-/*   Updated: 2025/04/06 02:10:06 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/04/06 02:19:14 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ int	keys_handle(int keycode, t_mlx *mlx)
 		julia_control(mlx, keycode);
 	else if (keycode == KEY_N || keycode == KEY_M)
 		something_interesting(mlx, keycode);
+	else if (keycode == KEY_L)
+		mlx->props->animation = !mlx->props->animation;
 	fill_img(mlx);
 	return (0);
 }
