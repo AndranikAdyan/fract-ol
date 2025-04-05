@@ -3,6 +3,7 @@ MAKEFLAGS	+= --no-print-directory
 RED				= \e[31m
 GREEN			= \e[32m
 YELLOW			= \e[33m
+CYAN			= \e[36m
 RESET			= \e[0m
 
 NAME			= fractol
@@ -53,7 +54,30 @@ $(BUILD_DIR)/%.o:	$(SRC_DIR)/%.c $(HEADERS) Makefile
 
 $(NAME): $(OBJ) $(LIBFT_DIR)/libft.a $(MLX_DIR)/libmlx.a
 	@$(CC) $(FLAGS) $(INCLUDES) $(OBJ) -o $(NAME) $(LIBFT) $(MLX)
-	@echo "${YELLOW}Fract-ol Done!${RESET} 📿"
+	@echo "${YELLOW}Fract-ol Done!${RESET} 📿\n\n"
+	@echo "$(CYAN)╔════════════════════════════════════╗$(RESET)"
+	@echo "$(CYAN)║          $(YELLOW)FRACT-OL PROJECT$(CYAN)          ║$(RESET)"
+	@echo "$(CYAN)║          $(YELLOW)Username: aadyan$(CYAN)          ║$(RESET)"
+	@echo "$(CYAN)╚════════════════════════════════════╝$(RESET)"
+	@echo "$(YELLOW)Usage:$(RESET)"
+	@echo "$(GREEN)./fractol <fractal name>$(RESET)"
+	@echo "Example: ./fractol mandelbrot"
+	@echo "$(YELLOW)Fractals:$(RESET)"
+	@echo "• mandelbrot"
+	@echo "• julia"
+	@echo "• tricorn"
+	@echo "• celtic_mandelbar"
+	@echo "• burning_ship"
+	@echo "$(YELLOW)Controls:$(RESET)"
+	@echo "Arrows     → move fractal"
+	@echo "+ / -      → zoom in / out"
+	@echo "Scroll     → zoom in / out"
+	@echo "R          → reset fractal view"
+	@echo "W A S D    → change Julia parameters"
+	@echo "Space      → change colors"
+	@echo "L          → lock animation"
+	@echo "N / M      → something interesting :)"
+	@echo "$(GREEN)Have fun exploring fractals!$(RESET)"
 
 lib:
 	@make -C $(LIBFT_DIR)
