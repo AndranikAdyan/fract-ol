@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 22:53:41 by aadyan            #+#    #+#             */
-/*   Updated: 2025/04/05 23:42:36 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/04/06 00:56:16 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 static void	print_help_menu(void)
 {
 	ft_putstr_fd(CYAN"╔════════════════════════════════════════════╗\n", 1);
-	ft_putstr_fd("║              "YELLOW"FRACT-OL PROJECT"CYAN"              ║\n", 1);
-	ft_putstr_fd("║              "YELLOW"Username: aadyan"CYAN"              ║\n", 1);
+	ft_putstr_fd("║          "YELLOW"FRACT-OL PROJECT"CYAN"          ║\n", 1);
+	ft_putstr_fd("║          "YELLOW"Username: aadyan"CYAN"          ║\n", 1);
 	ft_putstr_fd("╚════════════════════════════════════════════╝\n"RESET, 1);
 	ft_putstr_fd(YELLOW"Usage:\n"RESET, 1);
 	ft_putstr_fd(GREEN"./fractol <fractal name>\n", 1);
@@ -61,7 +61,7 @@ static int	set_fractal(t_mlx *mlx, char *fractal)
 
 int	validation(int ac, char *av[], t_mlx *mlx)
 {
-	if(ac != 2)
+	if (ac != 2)
 	{
 		print_help_menu();
 		return (0);

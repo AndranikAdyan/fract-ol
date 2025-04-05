@@ -6,11 +6,23 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 13:16:45 by aadyan            #+#    #+#             */
-/*   Updated: 2025/04/05 23:48:16 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/04/06 00:54:50 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
+
+static void	init_props(t_mlx *mlx)
+{
+	mlx->props->zoom = 4.0;
+	mlx->props->shift_x = 0.0;
+	mlx->props->shift_y = 0.0;
+	mlx->props->color = 0x0000FF;
+	mlx->props->color_queue = 0;
+	mlx->props->color_decreasing = 0;
+	mlx->props->c_nums = (t_complex_numbers){0, 0};
+	mlx->props->coords = (t_coords){-0.7, -0.27015};
+}
 
 t_mlx	*init_mlx(void)
 {
@@ -31,14 +43,7 @@ t_mlx	*init_mlx(void)
 	mlx->img_data->addr = mlx_get_data_addr(mlx->img_data->img, \
 						&mlx->img_data->bits_per_pixel, \
 						&mlx->img_data->line_length, &mlx->img_data->endian);
-	mlx->props->zoom = 4.0;
-	mlx->props->shift_x = 0.0;
-	mlx->props->shift_y = 0.0;
-	mlx->props->color = 0x0000FF;
-	mlx->props->color_queue = 0;
-	mlx->props->color_decreasing = 0;
-	mlx->props->c_nums = (t_complex_numbers){0, 0};
-	mlx->props->coords = (t_coords){-0.7, -0.27015};
+	init_props(mlx);
 	mlx->fractal = celtic_mandelbar;
 	return (mlx);
 }

@@ -6,13 +6,13 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 20:25:55 by aadyan            #+#    #+#             */
-/*   Updated: 2025/04/05 20:42:08 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/04/06 00:56:54 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-int burning_ship(t_properties props)
+int	burning_ship(t_properties props)
 {
 	double	z_x;
 	double	z_y;
@@ -29,5 +29,5 @@ int burning_ship(t_properties props)
 		z_x = tmp;
 		iter++;
 	}
-	return iter;
+	return (iter);
 }

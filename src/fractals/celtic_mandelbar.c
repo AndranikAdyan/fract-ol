@@ -6,13 +6,13 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 20:47:52 by aadyan            #+#    #+#             */
-/*   Updated: 2025/04/05 20:59:13 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/04/06 00:56:59 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-int celtic_mandelbar(t_properties props)
+int	celtic_mandelbar(t_properties props)
 {
 	double	z_x;
 	double	z_y;

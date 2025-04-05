@@ -4,16 +4,10 @@ NAME		= libft.a
 BUILD		=	./build
 SRCS_DIR	=	./src
 
-RED			:= \e[31m
-GREEN		:= \e[32m
-YELLOW		:= \e[33m
-BLUE		:= \e[34m
-MAGENTA		:= \e[35m
-CYAN		:= \e[36m
-WHITE		:= \e[37m
-BOLD		:= \e[1m
-UNDERLINE	:= \e[4m
-RESET		:= \e[0m
+RED			= \e[31m
+GREEN		= \e[32m
+YELLOW		= \e[33m
+RESET		= \e[0m
 
 SRCS		=	$(SRCS_DIR)/ft_isalpha.c \
 				$(SRCS_DIR)/ft_striteri.c \
@@ -62,10 +56,10 @@ SRCS		=	$(SRCS_DIR)/ft_isalpha.c \
 
 OBJS		= $(patsubst $(SRCS_DIR)/%.c, $(BUILD)/%.o, $(SRCS))
 
-HEADER	= libft.h
-AR		= ar rcs
-CC		= cc
-CFLAGS	= -Wall -Wextra -Werror
+HEADER		= libft.h
+AR			= ar rcs
+CC			= cc
+CFLAGS		= -Wall -Wextra -Werror
 
 all:	$(BUILD) $(NAME)
 
@@ -75,7 +69,7 @@ $(BUILD)/%.o:	$(SRCS_DIR)/%.c $(HEADER) Makefile
 
 $(NAME):	$(OBJS)
 	@$(AR) $(NAME) $(OBJS)
-	@echo "${YELLOW}Libft Done!${RESET} 📿\n\n"
+	@echo "${YELLOW}Libft Done!${RESET} 📿\n"
 
 $(BUILD):
 	@mkdir -p $(BUILD)
