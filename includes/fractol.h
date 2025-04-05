@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 17:18:52 by aadyan            #+#    #+#             */
-/*   Updated: 2025/04/06 01:51:40 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/04/06 01:59:04 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int					mouse_hook(int keycode, int x, int y, t_mlx *mlx);
 void				draw_pixel(int x, int y, t_data *img, int color);
 void				draw_fractal(t_mlx *mlx);
 int					animated_color(t_mlx *mlx);
+void				something_interesting(t_mlx *mlx, int keycode);
 void				julia_control(t_mlx *mlx, int keycode);
 
 t_complex_numbers	get_complex_nums(int x, int y, t_properties *props);

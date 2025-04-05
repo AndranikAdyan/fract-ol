@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 23:35:01 by aadyan            #+#    #+#             */
-/*   Updated: 2025/04/05 19:38:15 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/04/06 02:11:36 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,15 @@ int	animated_color(t_mlx *mlx)
 	}
 	fill_img(mlx);
 	return (0);
+}
+
+void	something_interesting(t_mlx *mlx, int keycode)
+{
+	if (keycode == KEY_N)
+		mlx->props->interesting *= 1.5;
+	else
+		mlx->props->interesting /= 1.5;
+	if (mlx->props->interesting < 10)
+		mlx->props->interesting = 10;
+	fill_img(mlx);
 }

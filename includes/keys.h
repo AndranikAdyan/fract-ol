@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 14:07:22 by aadyan            #+#    #+#             */
-/*   Updated: 2025/04/05 19:43:32 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/04/06 01:56:03 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 # define KEY_A 97
 # define KEY_S 115
 # define KEY_D 100
+# define KEY_M 109
+# define KEY_N 110
 
 # define LEFT 65361
 # define RIGHT 65363
