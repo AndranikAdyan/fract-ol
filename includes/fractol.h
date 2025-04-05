@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 17:18:52 by aadyan            #+#    #+#             */
-/*   Updated: 2025/04/05 19:53:51 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/04/05 20:36:54 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include "libft.h"
 # include "structs.h"
 # include "keys.h"
+# include <math.h>
 # include <stdio.h>
 
 # define WIN_SIZE 500
@@ -38,5 +39,6 @@ t_complex_numbers	get_complex_nums(int x, int y, t_properties *props);
 
 int					mandelbrot(t_properties props);
 int					julia(t_properties props);
+int					burning_ship(t_properties props);
 
 #endif
