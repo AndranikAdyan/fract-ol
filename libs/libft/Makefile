@@ -1,6 +1,19 @@
+MAKEFLAGS	+= --no-print-directory
+
 NAME		= libft.a
 BUILD		=	./build
 SRCS_DIR	=	./src
+
+RED			:= \e[31m
+GREEN		:= \e[32m
+YELLOW		:= \e[33m
+BLUE		:= \e[34m
+MAGENTA		:= \e[35m
+CYAN		:= \e[36m
+WHITE		:= \e[37m
+BOLD		:= \e[1m
+UNDERLINE	:= \e[4m
+RESET		:= \e[0m
 
 SRCS		=	$(SRCS_DIR)/ft_isalpha.c \
 				$(SRCS_DIR)/ft_striteri.c \
@@ -57,19 +70,21 @@ CFLAGS	= -Wall -Wextra -Werror
 all:	$(BUILD) $(NAME)
 
 $(BUILD)/%.o:	$(SRCS_DIR)/%.c $(HEADER) Makefile
-		$(CC) $(CFLAGS) -I. -c $< -o $@
+		@$(CC) $(CFLAGS) -I. -c $< -o $@
+		@echo "  ✅ ${GREEN}libft/$<${RESET}"
 
 $(NAME):	$(OBJS)
-	$(AR) $(NAME) $(OBJS)
+	@$(AR) $(NAME) $(OBJS)
+	@echo "${YELLOW}Libft Done!${RESET} 📿\n\n"
 
 $(BUILD):
-		@mkdir -p $(BUILD)
+	@mkdir -p $(BUILD)
 
 clean:
-	rm -rf $(OBJS)
+	@rm -rf $(OBJS)
 
 fclean:	clean
-	rm -rf $(NAME)
+	@rm -rf $(NAME)
 
 re:		fclean all
 
