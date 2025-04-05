@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 13:16:45 by aadyan            #+#    #+#             */
-/*   Updated: 2025/04/04 23:52:00 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/04/05 20:13:57 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,9 @@ t_mlx	*init_mlx(void)
 	mlx->props->color = 0x0000FF;
 	mlx->props->color_queue = 0;
 	mlx->props->color_decreasing = 0;
-	mlx->fractal = mandelbrot;
+	mlx->props->c_nums = (t_complex_numbers){0, 0};
+	mlx->props->coords = (t_coords){-0.7, -0.27015};
+	mlx->fractal = julia;
 	return (mlx);
 }
 
@@ -61,6 +63,6 @@ void	fill_img(t_mlx *mlx)
 							&mlx->img_data->bits_per_pixel, \
 							&mlx->img_data->line_length, \
 							&mlx->img_data->endian);
-	draw_fractal(mlx->img_data, mlx->props, mlx->fractal);
+	draw_fractal(mlx);
 	mlx_put_image_to_window(mlx->mlx, mlx->window, mlx->img_data->img, 0, 0);
 }

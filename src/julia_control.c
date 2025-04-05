@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   animation.c                                        :+:      :+:    :+:   */
+/*   julia_control.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/04 23:35:01 by aadyan            #+#    #+#             */
-/*   Updated: 2025/04/05 19:38:15 by aadyan           ###   ########.fr       */
+/*   Created: 2025/04/05 19:41:23 by aadyan            #+#    #+#             */
+/*   Updated: 2025/04/05 20:12:25 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-int	animated_color(t_mlx *mlx)
+void	julia_control(t_mlx *mlx, int keycode)
 {
-	if (mlx->props->color_queue != 0)
-	{
-		if (mlx->props->color >= 0xFFFFFF)
-			mlx->props->color_decreasing = 1;
-		else if (mlx->props->color <= 0x000000)
-			mlx->props->color_decreasing = 0;
-		if (mlx->props->color_decreasing)
-			mlx->props->color -= 0x000101;
-		else
-			mlx->props->color += 0x000101;
-	}
+	if (keycode == KEY_W)
+		mlx->props->coords.x += 0.05;
+	else if (keycode == KEY_S)
+		mlx->props->coords.x -= 0.05;
+	else if (keycode == KEY_A)
+		mlx->props->coords.y += 0.05;
+	else if (keycode == KEY_D)
+		mlx->props->coords.y -= 0.05;
 	fill_img(mlx);
-	return (0);
 }

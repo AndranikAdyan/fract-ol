@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 12:14:43 by aadyan            #+#    #+#             */
-/*   Updated: 2025/04/04 23:31:20 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/04/05 19:48:38 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,22 @@ typedef struct s_complex_numbers
 	double	cy;
 }	t_complex_numbers;
 
+typedef struct s_coords
+{
+	double	x;
+	double	y;
+}	t_coords;
+
 typedef struct s_properties
 {
-	double	zoom;
-	double	shift_x;
-	double	shift_y;
-	int		color;
-	int		color_queue;
-	int		color_decreasing;
+	double				zoom;
+	double				shift_x;
+	double				shift_y;
+	int					color;
+	int					color_queue;
+	int					color_decreasing;
+	t_complex_numbers	c_nums;
+	t_coords			coords;
 }	t_properties;
 
 typedef struct s_mlx
@@ -44,7 +52,7 @@ typedef struct s_mlx
 	void			*window;
 	t_data			*img_data;
 	t_properties	*props;
-	int				(*fractal)(t_complex_numbers, int);
+	int				(*fractal)(t_properties);
 }	t_mlx;
 
 #endif

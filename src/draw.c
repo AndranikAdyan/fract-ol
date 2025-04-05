@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 15:36:14 by aadyan            #+#    #+#             */
-/*   Updated: 2025/04/05 01:13:28 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/04/05 20:08:24 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,19 @@ void	draw_pixel(int x, int y, t_data *img, int color)
 {
 	char	*pixel_addr;
 
-	if (x < 0 || y < 0 || x > WIN_SIZE || y > WIN_SIZE)
+	if (x < 0 || y < 0 || x >= WIN_SIZE || y >= WIN_SIZE)
 		return ;
 	pixel_addr = img->addr + (y * img->line_length + x * \
 		(img->bits_per_pixel / 8));
 	*(unsigned int *)pixel_addr = color;
 }
 
-void	draw_fractal(t_data *img, t_properties *props, \
-						int (*fractal)(t_complex_numbers, int))
+void	draw_fractal(t_mlx *mlx)
 {
 	int					x;
 	int					y;
 	int					iter;
 	int					color;
-	t_complex_numbers	c_nums;
 
 	y = 0;
 	while (y < WIN_SIZE - 1)
@@ -38,14 +36,14 @@ void	draw_fractal(t_data *img, t_properties *props, \
 		x = 0;
 		while (x < WIN_SIZE - 1)
 		{
-			c_nums = get_complex_nums(x, y, props);
-			iter = fractal(c_nums, MAX_ITER);
+			mlx->props->c_nums = get_complex_nums(x, y, mlx->props);
+			iter = mlx->fractal(*mlx->props);
 			if (iter < 100)
 			{
-				color = ((props->color + iter * 100) & 0xFF0000) | \
-					((props->color + iter * 300) & 0x00FF00) | \
-					((props->color + iter * 10) & 0x0000FF);
-				draw_pixel(x, y, img, color);
+				color = ((mlx->props->color + iter * 100) & 0xFF0000) | \
+					((mlx->props->color + iter * 300) & 0x00FF00) | \
+					((mlx->props->color + iter * 10) & 0x0000FF);
+				draw_pixel(x, y, mlx->img_data, color);
 			}
 			++x;
 		}
