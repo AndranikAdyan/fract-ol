@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 13:16:45 by aadyan            #+#    #+#             */
-/*   Updated: 2025/04/05 20:41:12 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/04/05 20:49:55 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,7 @@ t_mlx	*init_mlx(void)
 	mlx->props->color_decreasing = 0;
 	mlx->props->c_nums = (t_complex_numbers){0, 0};
 	mlx->props->coords = (t_coords){-0.7, -0.27015};
-	mlx->fractal = tricorn;
-	;
+	mlx->fractal = celtic_mandelbar;
 	return (mlx);
 }
 
