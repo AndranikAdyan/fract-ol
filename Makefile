@@ -31,16 +31,18 @@ SRC				=	${SRC_DIR}/main.c \
 					${SRC_DIR}/initilization.c \
 					${SRC_DIR}/validation.c \
 					${SRC_DIR}/animation.c \
-					${SRC_DIR}/fractals/tricorn.c \
-					${SRC_DIR}/fractals/burning_ship.c \
-					${SRC_DIR}/fractals/celtic_mandelbar.c \
-					${SRC_DIR}/fractals/mandelbrot.c \
-					${SRC_DIR}/fractals/julia.c \
 					${SRC_DIR}/draw.c \
 					${SRC_DIR}/hooks.c \
 					${SRC_DIR}/julia_control.c \
 					${SRC_DIR}/mouse_controls.c \
-					${SRC_DIR}/controls.c
+					${SRC_DIR}/controls.c\
+					${SRC_DIR}/fractals/mandelbrot.c \
+					${SRC_DIR}/fractals/julia.c \
+					${SRC_DIR}/fractals/tricorn.c \
+					${SRC_DIR}/fractals/celtic_mandelbar.c \
+					${SRC_DIR}/fractals/burning_ship.c \
+					${SRC_DIR}/fractals/newton.c \
+
 
 OBJ				= $(patsubst $(SRC_DIR)/%.c, $(BUILD_DIR)/%.o, $(SRC))
 
@@ -68,6 +70,7 @@ $(NAME): $(OBJ) $(LIBFT_DIR)/libft.a $(MLX_DIR)/libmlx.a
 	@echo "• tricorn"
 	@echo "• celtic_mandelbar"
 	@echo "• burning_ship"
+	@echo "• newton"
 	@echo "$(YELLOW)Controls:$(RESET)"
 	@echo "Arrows     → move fractal"
 	@echo "+ / -      → zoom in / out"

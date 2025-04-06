@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 17:18:52 by aadyan            #+#    #+#             */
-/*   Updated: 2025/04/06 01:59:04 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/04/06 10:55:29 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ int					julia(t_properties props);
 int					burning_ship(t_properties props);
 int					tricorn(t_properties props);
 int					celtic_mandelbar(t_properties props);
+int					newton(t_properties props);
 
 void				hooks(t_mlx *mlx);
 

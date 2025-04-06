@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 22:53:41 by aadyan            #+#    #+#             */
-/*   Updated: 2025/04/06 10:26:55 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/04/06 10:55:42 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ static void	print_help_menu(void)
 	ft_putstr_fd("• tricorn\n", 1);
 	ft_putstr_fd("• celtic_mandelbar\n", 1);
 	ft_putstr_fd("• burning_ship\n", 1);
+	ft_putstr_fd("• newton\n", 1);
 	ft_putstr_fd(YELLOW"Controls:\n"RESET, 1);
 	ft_putstr_fd("Arrows     → move fractal\n", 1);
 	ft_putstr_fd("+ / -      → zoom in / out\n", 1);
@@ -56,6 +57,8 @@ static int	set_fractal(t_mlx *mlx, char *fractal)
 		mlx->fractal = celtic_mandelbar;
 	else if (ft_strcmp(fractal, "burning_ship") == 0)
 		mlx->fractal = burning_ship;
+	else if (ft_strcmp(fractal, "newton") == 0)
+		mlx->fractal = newton;
 	else
 		return (0);
 	return (1);
@@ -77,6 +80,7 @@ int	validation(int ac, char *av[], t_mlx *mlx)
 		ft_putstr_fd("• tricorn\n", 1);
 		ft_putstr_fd("• celtic_mandelbar\n", 1);
 		ft_putstr_fd("• burning_ship\n", 1);
+		ft_putstr_fd("• newton\n", 1);
 		return (0);
 	}
 	return (1);
