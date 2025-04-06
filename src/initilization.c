@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 13:16:45 by aadyan            #+#    #+#             */
-/*   Updated: 2025/04/06 02:16:11 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/04/06 14:52:48 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,22 @@ static void	init_props(t_mlx *mlx)
 	mlx->props->coords = (t_coords){-0.7, -0.27015};
 	mlx->props->interesting = 10;
 	mlx->props->animation = 1;
+}
+
+void	set_fractal(t_mlx *mlx, char *fractal)
+{
+	if (ft_strcmp(fractal, "mandelbrot") == 0)
+		mlx->fractal = mandelbrot;
+	else if (ft_strcmp(fractal, "julia") == 0)
+		mlx->fractal = julia;
+	else if (ft_strcmp(fractal, "tricorn") == 0)
+		mlx->fractal = tricorn;
+	else if (ft_strcmp(fractal, "celtic_mandelbar") == 0)
+		mlx->fractal = celtic_mandelbar;
+	else if (ft_strcmp(fractal, "burning_ship") == 0)
+		mlx->fractal = burning_ship;
+	else if (ft_strcmp(fractal, "newton") == 0)
+		mlx->fractal = newton;
 }
 
 t_mlx	*init_mlx(void)

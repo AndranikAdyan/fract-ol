@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 22:53:41 by aadyan            #+#    #+#             */
-/*   Updated: 2025/04/06 10:55:42 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/04/06 14:54:15 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,33 +45,31 @@ static void	print_help_menu(void)
 	ft_putstr_fd(GREEN"Have fun exploring fractals!\n"RESET, 1);
 }
 
-static int	set_fractal(t_mlx *mlx, char *fractal)
+static int	check_fractal(char *fractal)
 {
 	if (ft_strcmp(fractal, "mandelbrot") == 0)
-		mlx->fractal = mandelbrot;
+		return (1);
 	else if (ft_strcmp(fractal, "julia") == 0)
-		mlx->fractal = julia;
+		return (1);
 	else if (ft_strcmp(fractal, "tricorn") == 0)
-		mlx->fractal = tricorn;
+		return (1);
 	else if (ft_strcmp(fractal, "celtic_mandelbar") == 0)
-		mlx->fractal = celtic_mandelbar;
+		return (1);
 	else if (ft_strcmp(fractal, "burning_ship") == 0)
-		mlx->fractal = burning_ship;
+		return (1);
 	else if (ft_strcmp(fractal, "newton") == 0)
-		mlx->fractal = newton;
-	else
-		return (0);
-	return (1);
+		return (1);
+	return (0);
 }
 
-int	validation(int ac, char *av[], t_mlx *mlx)
+int	validation(int ac, char *av[])
 {
 	if (ac != 2)
 	{
 		print_help_menu();
 		return (0);
 	}
-	if (!set_fractal(mlx, av[1]))
+	if (!check_fractal(av[1]))
 	{
 		ft_putstr_fd(RED"Invalid fractal name!\n"RESET, 2);
 		ft_putstr_fd("Available fractals:\n", 1);

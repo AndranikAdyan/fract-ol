@@ -6,7 +6,7 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 17:18:52 by aadyan            #+#    #+#             */
-/*   Updated: 2025/04/06 10:55:29 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/04/06 14:55:22 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 t_mlx				*init_mlx(void);
 void				fill_img(t_mlx *mlx);
 int					free_mlx(t_mlx *mlx);
+void				set_fractal(t_mlx *mlx, char *fractal);
 
 int					keys_handle(int keycode, t_mlx *mlx);
 int					mouse_hook(int keycode, int x, int y, t_mlx *mlx);
@@ -47,6 +48,6 @@ int					newton(t_properties props);
 
 void				hooks(t_mlx *mlx);
 
-int					validation(int ac, char *av[], t_mlx *mlx);
+int					validation(int ac, char *av[]);
 
 #endif
