@@ -63,7 +63,7 @@ $(NAME): $(OBJ) $(LIBFT_DIR)/libft.a $(MLX_DIR)/libmlx.a
 	@echo "$(CYAN)╚════════════════════════════════════╝$(RESET)"
 	@echo "$(YELLOW)Usage:$(RESET)"
 	@echo "$(GREEN)./fractol <fractal name>$(RESET)"
-	@echo "Example: ./fractol mandelbrot"
+	@echo "$(GREEN)Example: ./fractol mandelbrot$(RESET)"
 	@echo "$(YELLOW)Fractals:$(RESET)"
 	@echo "• mandelbrot"
 	@echo "• julia"
