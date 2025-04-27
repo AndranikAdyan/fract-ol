@@ -6,11 +6,9 @@
 /*   By: aadyan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 10:54:22 by aadyan            #+#    #+#             */
-/*   Updated: 2025/04/06 10:54:35 by aadyan           ###   ########.fr       */
+/*   Updated: 2025/04/27 11:50:22 by aadyan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "fractol.h"
 
 #include "fractol.h"
 
@@ -36,7 +34,8 @@ static t_complex_numbers	newton_derivative(t_complex_numbers z)
 	return (df);
 }
 
-static t_complex_numbers	newton_next(t_complex_numbers z, t_complex_numbers f, t_complex_numbers df)
+static t_complex_numbers	newton_next(t_complex_numbers z, \
+	t_complex_numbers f, t_complex_numbers df)
 {
 	t_complex_numbers	tmp;
 	double				denom;
