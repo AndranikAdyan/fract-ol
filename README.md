@@ -1,19 +1,7 @@
-Here's a polished `README.md` for your **fract-ol** project, including the usage, supported fractals, controls, and a placeholder for adding screenshots or visual examples.
-
----
-
 # 🌌 fract-ol
 
 > A 42 project for exploring beautiful and complex fractals using the MiniLibX graphics library.
 > This program renders multiple fractal types with real-time interaction and zooming.
-
----
-
-## 📁 Repository
-
-**GitHub:** [AndranikAdyan/fract-ol](https://github.com/AndranikAdyan/fract-ol)
-
----
 
 ## 🧠 Project Objective
 
